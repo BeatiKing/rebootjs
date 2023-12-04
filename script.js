@@ -25,6 +25,11 @@ function checkInternetConnection(){
     });
 
     xhr.send();
+
+    document.getElementById('test').innerHTML = `primary: ${window.innerWidth}`;
+    window.screen.orientation.addEventListener('change', () => {
+        document.getElementById('test').innerHTML = window.innerWidth;
+    })
 }        
 
 checkInternetConnection();
